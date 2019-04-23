@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <conio.h>
+
 #include <string.h>
 #include <stdlib.h>
 
@@ -7,7 +7,7 @@
 main()
 { 	
 	int i, r=0;
-  	char c, ch, eng[10], rus[10];
+  	char ch, eng[10], rus[10];
   	FILE *t;
   	system("CLS");
   	t=fopen("file1.txt","r"); 
@@ -35,5 +35,5 @@ main()
 		
   	}
   	printf("-%s-%s-",eng,rus);
-  	getch();
+
 }
