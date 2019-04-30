@@ -8,6 +8,7 @@ struct sl{char en[15]; char ru[15];} d;
 typedef struct sl s2;
 
 void Voc(s2 *w);
+void Learn(s2 *w);
 
 main()
 { 	
@@ -48,7 +49,8 @@ main()
 		
   	}
 	Voc(w);
-	
+	Learn(w);	
+
 	return 0;
 }
 
@@ -85,3 +87,27 @@ void Voc(s2 *w){
 		for(i=0;i<n;i++) printf("%s - %s\n",w[B[i]].ru,w[B[i]].en);}
 	
 }
+
+
+void Learn(s2 *w){
+	int i=0,mo;
+	char wo[15];
+	scanf("%d",&mo);
+	
+	if(mo==1){
+	while(i<n){
+		printf("%s\n",w[i].en);
+		scanf("%s",wo);
+		if(strcmp(wo,w[i].ru)==0) i++;
+	}}
+	
+	if(mo==2){
+	while(i<n){
+		printf("%s\n",w[i].ru);
+		scanf("%s",wo);
+		if(strcmp(wo,w[i].en)==0) i++;
+	}}
+	
+}
+
+
