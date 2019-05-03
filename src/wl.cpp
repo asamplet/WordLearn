@@ -107,7 +107,6 @@ void Learn(s2 *w){
 		scanf("%s",wo);
 		if(strcmp(wo,w[i].en)==0) i++;
 	}}
-return 0;	
 }
 
 
