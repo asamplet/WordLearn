@@ -10,7 +10,7 @@ typedef struct sl s2;
 void Voc(s2 *w);
 void Learn(s2 *w);
 
-main()
+int main()
 { 	
 	int i, r=0,j=0;
   	char ch, eng[15], rus[15];
@@ -107,7 +107,7 @@ void Learn(s2 *w){
 		scanf("%s",wo);
 		if(strcmp(wo,w[i].en)==0) i++;
 	}}
-	
+return 0;	
 }
 
 

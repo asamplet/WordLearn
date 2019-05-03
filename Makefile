@@ -1,16 +1,16 @@
 .PHONY:all clean
-SF=~/WordLearn/src
-SD=~/WordLearn/build
-CC=gcc
+SF=~/WordLearn/src/
+SD=~/WordLearn/bin/
+CC=g++
 FLAG=-Wall -Werror
-EXE=~/WordLearn/bin/wl.exe
+EXE=~/WordLearn/build/wl.exe
 
 all: $(EXE)
 
 
-$(EXE): $(SD) wl.o $(main.o)
-	$(CC) -g $(FLAG) -o $(EXE) $(SD)wl.o  -lm
-$(SD)wl.o: $(SF)wl.cpp
-	$(CC) -o $(FLAG) -c -o $(SD)wl.o $(SF)wl.cpp -lm
+$(EXE): $(SD)wl.o 
+	$(CC) $(FLAG) -o $(EXE) $(SD)wl.o
+$(SD)wl.o: 
+	$(CC) $(FLAG) -c -o  $(SD)wl.o $(SF)wl.cpp
 clean:
 	rm -rf $(EXE) $(SD)*.o
