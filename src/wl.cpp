@@ -1,22 +1,24 @@
+#include "wordlearn.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #define n 10
 
-struct sl{char en[15]; char ru[15];} d;
 
-typedef struct sl s2;
+//extern struct s2{char en[15]; char ru[15];} d;
 
-void Voc(s2 *w);
-void Learn(s2 *w);
+//typedef struct d s2;
+
+
+//void Learn(d *w);
 
 int main()
 { 	
 	int i, r=0,j=0;
   	char ch, eng[15], rus[15];
   	FILE *t;
-  	  
-  	struct sl w[n];  
+	printf("123");
+  	struct d w[n];  
   	t=fopen("file1.txt","r"); 
   
  	i=0;
@@ -48,13 +50,15 @@ int main()
 		i++;
 		
   	}
+	
 	Voc(w);
-	Learn(w);	
+	//Learn(w);	
+
 
 	return 0;
 }
 
-
+/*
 void Voc(s2 *w){
 	int i,j,g,B[n],mo;
 	scanf("%d",&mo);
@@ -89,7 +93,7 @@ void Voc(s2 *w){
 }
 
 
-void Learn(s2 *w){
+void Learn(d *w){
 	int i=0,mo;
 	char wo[15];
 	scanf("%d",&mo);
@@ -107,6 +111,6 @@ void Learn(s2 *w){
 		scanf("%s",wo);
 		if(strcmp(wo,w[i].en)==0) i++;
 	}}
-}
+}*/
 
 

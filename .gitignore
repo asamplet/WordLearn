@@ -1,3 +1,7 @@
-wl
+all
 *.o
 *.swp
+*.swo
+*.svm
+*.swn
+wl.exe
