@@ -21,7 +21,7 @@ void Voc(s2 *w){
 		}
 		B[j+1]=g;
 	}
-		for(i=0;i<n;i++) printf("%s - %s",w[B[i]].en,w[B[i]].ru);}
+		for(i=0;i<n;i++) printf("%s - %s\n",w[B[i]].en,w[B[i]].ru);}
 	
 	if(mo==2) {
 		for(i=1;i<n;i++){
