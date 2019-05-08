@@ -1,0 +1,10 @@
+duck=utka.
+car=mashina.
+elevator=lift.
+frog=liagushka.
+dog=sobaka.
+cat=koshka.
+pen=ruchka.
+desk=parta.
+love=lubov.
+toy=igrushka.
