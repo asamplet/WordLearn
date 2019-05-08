@@ -5,10 +5,11 @@
 #define n 10
 
 
-//extern struct s2{char en[15]; char ru[15];} d;
+//struct d1{char en[15]; char ru[15];} d1;
 
 //typedef struct d s2;
 
+struct d{char en[15]; char ru[15];} d;
 
 //void Learn(d *w);
 
@@ -18,7 +19,7 @@ int main()
   	char ch, eng[15], rus[15];
   	FILE *t;
 	printf("123");
-  	struct d w[n];  
+  	struct d w[n];
   	t=fopen("file1.txt","r"); 
   
  	i=0;
