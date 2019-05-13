@@ -12,7 +12,8 @@ int main()
   	Wl(w);
 	Voc(w);
 	Learn(w);	
-
+	Voc1(w);
+	Learn1(w);
 
 	return 0;
 }
