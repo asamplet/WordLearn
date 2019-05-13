@@ -8,8 +8,11 @@ EXE=bin/wl.exe
 all: $(EXE)
 
 
-$(EXE): $(SD)wl.o $(SD)voc.o $(SD)learn.o
-	$(CC) $(FLAG) -o $(EXE) $(SD)wl.o $(SD)voc.o $(SD)learn.o -lm
+$(EXE): $(SD)main.o $(SD)wl.o $(SD)voc.o $(SD)learn.o
+	$(CC) $(FLAG) -o $(EXE) $(SD)main.o $(SD)wl.o $(SD)voc.o $(SD)learn.o -lm
+
+$(SD)main.o: $(SF)main.cpp
+	$(CC) $(FLAG) -o $(SD)main.o -c $(SF)main.cpp -lm
 
 $(SD)wl.o: $(SF)wl.cpp
 	$(CC) $(FLAG) -o $(SD)wl.o -c $(SF)wl.cpp -lm

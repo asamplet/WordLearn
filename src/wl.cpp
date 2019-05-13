@@ -5,12 +5,10 @@
 #define n 10
 
 
-int main()
-{ 	
+void Wl(s2 *w){ 	
 	int i, r=0,j=0;
   	char ch, eng[15], rus[15];
   	FILE *t;
-  	struct d w[n];
   	t=fopen("file1.txt","r"); 
   
  	i=0;
@@ -46,12 +44,8 @@ int main()
 		i++;
 		
   	}
-	
-	Voc(w);
-	Learn(w);	
+	fclose(t);
 
-
-	return 0;
 }
 
 
