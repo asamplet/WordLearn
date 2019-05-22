@@ -8,4 +8,5 @@ script:
   - make test
   - cd bin
   - ./test.exe
+  - cd ..
   - git ls-files src/ | xargs clang-format -i && git diff --exit-code
