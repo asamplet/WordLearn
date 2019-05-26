@@ -6,6 +6,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
+#include <conio.h>
 #pragma warning(disable : 4996)
 #define n 10
 //144, 238, 144/ 143, 188, 143
@@ -20,7 +21,7 @@ void Learning();
 void Voc_enru();
 void Voc_ruen();
 void Learn_enru();
-//void Learn_ruen();
+void Learn_ruen();
 struct d w[n];
 
 RenderWindow window(VideoMode(800, 600), "WordLearn");
@@ -400,7 +401,6 @@ void Learning()
 	shadow4.setPoint(3, sf::Vector2f(660, 465));
 	shadow4.setFillColor(Color(212, 150, 97));
 
-	//struct d w[n];
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) 
@@ -421,7 +421,7 @@ void Learning()
 				if (event.type == sf::Event::MouseButtonPressed
 					&& event.mouseButton.button == sf::Mouse::Left)
 				{
-					//Learn_ruen();
+					Learn_ruen();
 				}
 			}
 			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Tab)
@@ -620,38 +620,27 @@ void Learn_enru()
 	string left;
 	string rus;
 	string right;
-	for (int i = 0; i < n; i++)
-	{
-		rus = (const char*)w[i].ru;
-		eng = (const char*)w[i].en;
-		left = eng + "\n";
-		right = rus + "\n";
-	}
-	text0.setString((left));
-	text1.setString((right));
-	unsigned char i1 = 0, flag = 1;
-	wchar_t st = L'0', st1[15] = L"\0";
 
+	eng = (const char*)w[0].en;
+	rus = (const char*)w[0].ru;
+	string st;
+
+	text0.setString((eng));
 	text0.setColor(Color(255, 239, 213));
 	text0.setPosition(150, 240);
 	text01.setColor(Color(255, 239, 213));
 	text01.setPosition(430, 240);
 	text_.setColor(Color(255, 239, 213));
 	text_.setPosition(400, 240);
-	slovo.setColor(Color(255, 239, 213, 190));
+	slovo.setColor(Color(255, 239, 213, 200));
 	slovo.setPosition(170, 120);
-	perevod.setColor(Color(255, 239, 213, 190));
+	perevod.setColor(Color(255, 239, 213, 200));
 	perevod.setPosition(450, 120);
-
+	
 	int count = 0;
 
 	while (window.isOpen())
 	{
-		//if (text0.getPosition().x + 16 > screenDimensions.x / 5)
-			//position.x = text0.getPosition().x + 16;
-		//else
-			//position.x = screenDimensions.x / 2;
-
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -665,108 +654,139 @@ void Learn_enru()
 			}
 			if (event.type == sf::Event::TextEntered) {
 					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-						st = L'й';
+						char s = 'й';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-						st = L'ц';
+						char s = 'ц';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
-						st = L'у';
+						char s = 'у';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
-						st = L'к';
+						char s = 'к';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
-						st = L'е';
+						char s = 'е';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
-						st = L'н';
+						char s = 'н';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::U)) {
-						st = L'г';
+						char s = 'г';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) {
-						st = L'ш';
+						char s = 'ш';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::O)) {
-						st = L'щ';
+						char s = 'щ';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
-						st = L'з';
+						char s = 'з';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::LBracket)) {
-						st = L'х';
+						char s = 'х';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::RBracket)) {
-						st = L'ъ';
+						char s = 'ъ';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-						st = L'ф';
+						char s = 'ф';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-						st = L'ы';
+						char s = 'ы';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-						st = L'в';
+						char s = 'в';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) {
-						st = L'а';
+						char s = 'а';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
-						st = L'п';
+						char s = 'п';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H)) {
-						st = L'р';
+						char s = 'р';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) {
-						st = L'о';
+						char s = 'о';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)) {
-						st = L'л';
+						char s = 'л';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
-						st = L'д';
+						char s = 'д';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::SemiColon)) {
-						st = L'ж';
+						char s = 'ж';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Quote)) {
-						st = L'э';
+						char s = 'э';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
-						st = L'я';
+						char s = 'я';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
-						st = L'ч';
+						char s = 'ч';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
-						st = L'с';
+						char s = 'с';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
-						st = L'м';
+						char s = 'м';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
-						st = L'и';
+						char s = 'и';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
-						st = L'т';
+						char s = 'т';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) {
-						st = L'ь';
+						char s = 'ь';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Comma)) {
-						st = L'б';
+						char s = 'б';
+						st.push_back(s);
 					}
 					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Period)) {
-						st = L'ю';
+						char s = 'ю';
+						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace)) {
-						st = L'\0';
-						flag = 2;
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace)) {
+						st.erase(st.size() - 1, 1);
 					}
-					else
-						flag = 0;
-					if (flag) {
+
+					text01.setString(st);
+					/*if (flag) {
 						if (flag == 2 && i1) {
 							st1[i1 - 1] = L'\0';
 							i1--;
@@ -777,27 +797,23 @@ void Learn_enru()
 						}
 						text01.setString(st1);
 					}
-					flag = 1;
+					flag = 1;*/
 			}
-			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Enter)
-			{
-				rus = (const char*)w[count].ru;
-				wstring c(st1);
-				const wchar_t* mocha = w[count].ru.c_str();
-				if (mocha == st1)
-				//char gg;
-				//const char * gg = c.c_str();
-				//if (strnicmp(w[count].ru, gg, sizeof(w[count].ru)))
-
-				//if (c == rus)
+			if (count!=10) {
+				if (event.type == Event::KeyPressed && event.key.code == Keyboard::Enter && rus == st)
 				{
-					//rectangle.setFillColor(Color::Blue);
+					st.clear();
 					count++;
 					eng = (const char*)w[count].en;
-					//eng = eng + "-" + "\n";
+					rus = (const char*)w[count].ru;
 					text0.setString(eng);
 				}
+				else if (event.type == Event::KeyPressed && event.key.code == Keyboard::Enter && rus != st)
+					st.clear();
 			}
+			else
+				Learning();
+			
 		}
 
 
@@ -818,3 +834,217 @@ void Learn_enru()
 
 }
 
+void Learn_ruen()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	window.setTitle("Learn_ruen");
+
+	Image menuimage;
+	menuimage.loadFromFile("C:/Users/DNS-PC/Desktop/image/inoutputwindow.png");
+	Texture menuTexture;
+	menuTexture.loadFromImage(menuimage);
+	Sprite menusprite;
+	menusprite.setTexture(menuTexture);
+
+	RectangleShape rectangle(sf::Vector2f(620, 400));
+	rectangle.setOutlineThickness(1);
+	rectangle.setOutlineColor(Color(255, 239, 213));
+	rectangle.setPosition(90, 100);
+	rectangle.setFillColor(Color(100, 111, 125, 120));
+	RectangleShape rectangle2(sf::Vector2f(270, 50));
+	rectangle2.setOutlineThickness(1);
+	rectangle2.setOutlineColor(Color(255, 239, 213));
+	rectangle2.setPosition(420, 250);
+	rectangle2.setFillColor(Color(100, 111, 125, 190)); 
+
+	Font font;
+	font.loadFromFile("benguiat-rus_[allfont.ru].ttf");
+	Text title("Введите перевод слова", font, 55);
+	title.setColor(Color(255, 239, 213));
+	title.setStyle(sf::Text::Bold);
+	title.setPosition(70, 30);
+
+	Wl(w);
+	Voc1(w);
+
+	Text text0("", font, 50);
+	Text text01("", font, 50);
+	Text text1("", font, 40);
+	Text text_("-", font, 50);
+	Text slovo("слово:", font, 50);
+	Text perevod("перевод:", font, 50);
+
+	string eng;
+	string rus;
+
+	eng = (const char*)w[0].en;
+	rus = (const char*)w[0].ru;
+	string st;
+
+	text0.setString((rus));
+	text0.setColor(Color(255, 239, 213));
+	text0.setPosition(150, 240);
+	text01.setColor(Color(255, 239, 213));
+	text01.setPosition(430, 240);
+	text_.setColor(Color(255, 239, 213));
+	text_.setPosition(400, 240);
+	slovo.setColor(Color(255, 239, 213, 200));
+	slovo.setPosition(170, 120);
+	perevod.setColor(Color(255, 239, 213, 200));
+	perevod.setPosition(450, 120);
+
+	int count = 0;
+
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+
+			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Tab)
+			{
+				Learning();
+				return;
+			}
+			if (event.type == sf::Event::TextEntered) {
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+					char s = 'q';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+					char s = 'w';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+					char s = 'e';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+					char s = 'r';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
+					char s = 't';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
+					char s = 'y';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::U)) {
+					char s = 'u';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) {
+					char s = 'i';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::O)) {
+					char s = 'o';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+					char s = 'p';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+					char s = 'a';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+					char s = 's';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+					char s = 'd';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) {
+					char s = 'f';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
+					char s = 'g';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H)) {
+					char s = 'h';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) {
+					char s = 'j';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)) {
+					char s = 'k';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
+					char s = 'l';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
+					char s = 'z';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
+					char s = 'x';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
+					char s = 'c';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
+					char s = 'v';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
+					char s = 'b';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
+					char s = 'n';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) {
+					char s = 'm';
+					st.push_back(s);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace)) {
+					st.erase(st.size() - 1, 1);
+				}
+
+				text01.setString(st);
+			}
+			if (count != 10) {
+				if (event.type == Event::KeyPressed && event.key.code == Keyboard::Enter && eng == st)
+				{
+					st.clear();
+					count++;
+					eng = (const char*)w[count].en;
+					rus = (const char*)w[count].ru;
+					text0.setString(rus);
+				}
+				else if (event.type == Event::KeyPressed && event.key.code == Keyboard::Enter && eng != st)
+					st.clear();
+			}
+			else
+				Learning();
+		}
+		window.clear();
+		window.draw(menusprite);
+		window.draw(title);
+		window.draw(rectangle);
+		window.draw(slovo);
+		window.draw(perevod);
+		window.draw(rectangle2);
+		window.draw(text0);
+		window.draw(text_);
+		window.draw(text01);
+		window.display();
+	}
+}
