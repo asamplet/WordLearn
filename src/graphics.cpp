@@ -9,7 +9,7 @@
 #include <conio.h>
 #pragma warning(disable : 4996)
 #define n 10
-//144, 238, 144/ 143, 188, 143
+
 using namespace sf;
 using namespace std;
 
@@ -22,6 +22,7 @@ void Voc_enru();
 void Voc_ruen();
 void Learn_enru();
 void Learn_ruen();
+void Completed();
 struct d w[n];
 
 RenderWindow window(VideoMode(800, 600), "WordLearn");
@@ -47,10 +48,10 @@ void MainMenu()
 	Text textmenu("WordLearn", fontmenu, 100);
 	textmenu.setColor(Color(255, 239, 213));
 	textmenu.setStyle(sf::Text::Bold);
-	textmenu.setPosition(130, 210);
+	textmenu.setPosition(130, 190);
 	Text textmenu2("нажмите на любую клавишу",fontmenu, 25);
 	textmenu2.setColor(Color(255, 239, 213, 100));
-	textmenu2.setPosition(220, 350);
+	textmenu2.setPosition(220, 330);
 
 	while (window.isOpen())
 	{
@@ -103,7 +104,7 @@ void Menu()
 
 	Font font;
 	font.loadFromFile("benguiat-rus_[allfont.ru].ttf");
-	Text text("Словарь", font, 50);//сам объект текст (не строка)
+	Text text("Словарь", font, 50);
 	text.setColor(Color(255, 239, 213));
 	text.setStyle(sf::Text::Bold);
 	text.setPosition(300, 190);
@@ -156,6 +157,13 @@ void Menu()
 	shadow4.setPoint(3, sf::Vector2f(560, 465));
 	shadow4.setFillColor(Color(212, 150, 97));
 
+	sf::RectangleShape rectangle0(sf::Vector2f(340, 110));
+	rectangle0.setFillColor(Color(70, 130, 180, 0));
+	rectangle0.setPosition(230, 170);
+	sf::RectangleShape rectangle01(sf::Vector2f(340, 110));
+	rectangle01.setFillColor(Color(70, 130, 180, 0));
+	rectangle01.setPosition(230, 365);
+
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -163,17 +171,22 @@ void Menu()
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+
 			if (IntRect(240, 160, 320, 90).contains(Mouse::getPosition(window)))
 			{
+				rectangle0.setFillColor(Color(70, 130, 180, 130));
+
 				if (event.type == sf::Event::MouseButtonPressed
 					&& event.mouseButton.button == sf::Mouse::Left)
 				{
 					Vocabulary();
 					return;
 				}
-			}
+			} 
+			else rectangle0.setFillColor(Color(70, 130, 180, 0));
 			if (IntRect(240, 375, 320, 90).contains(Mouse::getPosition(window)))
 			{
+				rectangle01.setFillColor(Color(70, 130, 180, 130));
 				if (event.type == sf::Event::MouseButtonPressed
 					&& event.mouseButton.button == sf::Mouse::Left)
 				{
@@ -181,20 +194,22 @@ void Menu()
 					return;
 				}
 			}
+			else rectangle01.setFillColor(Color(70, 130, 180, 0));
 			window.clear();
 			window.draw(menusprite1);
 			window.draw(rectangle);
 			window.draw(shadow);
 			window.draw(shadow2);
+			window.draw(text);
+			window.draw(rectangle0);
 			window.draw(rectangle2);
 			window.draw(shadow3);
 			window.draw(shadow4);
-			window.draw(text);
 			window.draw(text2);
+			window.draw(rectangle01);
 			window.draw(text3);
 			window.display();
 		}
-
 	}
 }
 
@@ -277,6 +292,13 @@ void Vocabulary()
 	shadow4.setPoint(3, sf::Vector2f(660, 465));
 	shadow4.setFillColor(Color(175, 109, 173));
 
+	sf::RectangleShape rectangle0(sf::Vector2f(540, 110));
+	rectangle0.setFillColor(Color(70, 130, 180, 0));
+	rectangle0.setPosition(130, 170);
+	sf::RectangleShape rectangle01(sf::Vector2f(540, 110));
+	rectangle01.setFillColor(Color(70, 130, 180, 0));
+	rectangle01.setPosition(130, 365);
+
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) 
@@ -286,20 +308,26 @@ void Vocabulary()
 
 			if (IntRect(140, 160, 520, 90).contains(Mouse::getPosition(window)))
 			{
+				rectangle0.setFillColor(Color(70, 130, 180, 130));
 				if (event.type == sf::Event::MouseButtonPressed
 					&& event.mouseButton.button == sf::Mouse::Left)
 				{
 					Voc_enru();
 				}
 			}
+			else rectangle0.setFillColor(Color(70, 130, 180, 0));
+
 			if (IntRect(140, 375, 520, 90).contains(Mouse::getPosition(window)))
 			{
+				rectangle01.setFillColor(Color(70, 130, 180, 130));
 				if (event.type == sf::Event::MouseButtonPressed
 					&& event.mouseButton.button == sf::Mouse::Left)
 				{
 					Voc_ruen();
 				}
 			}
+			else rectangle01.setFillColor(Color(70, 130, 180, 0));
+
 			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Tab)
 			{
 				Menu();
@@ -312,15 +340,16 @@ void Vocabulary()
 			window.draw(text);
 			window.draw(shadow1);
 			window.draw(shadow2);
+			window.draw(rectangle0);
 			window.draw(rectangle2);
 			window.draw(text2);
 			window.draw(shadow3);
 			window.draw(shadow4);
+			window.draw(rectangle01);
 			window.draw(text3);
 			window.display();
 		}
 	}
-
 }
 
 void Learning()
@@ -401,6 +430,13 @@ void Learning()
 	shadow4.setPoint(3, sf::Vector2f(660, 465));
 	shadow4.setFillColor(Color(212, 150, 97));
 
+	sf::RectangleShape rectangle0(sf::Vector2f(540, 110));
+	rectangle0.setFillColor(Color(70, 130, 180, 0));
+	rectangle0.setPosition(130, 170);
+	sf::RectangleShape rectangle01(sf::Vector2f(540, 110));
+	rectangle01.setFillColor(Color(70, 130, 180, 0));
+	rectangle01.setPosition(130, 365);
+
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) 
@@ -410,20 +446,26 @@ void Learning()
 
 			if (IntRect(140, 160, 520, 90).contains(Mouse::getPosition(window)))
 			{
+				rectangle0.setFillColor(Color(70, 130, 180, 130));
 				if (event.type == sf::Event::MouseButtonPressed
 					&& event.mouseButton.button == sf::Mouse::Left)
 				{
 					Learn_enru();
 				}
 			}
+			else rectangle0.setFillColor(Color(70, 130, 180, 0));
+
 			if (IntRect(140, 375, 520, 90).contains(Mouse::getPosition(window)))
 			{
+				rectangle01.setFillColor(Color(70, 130, 180, 130));
 				if (event.type == sf::Event::MouseButtonPressed
 					&& event.mouseButton.button == sf::Mouse::Left)
 				{
 					Learn_ruen();
 				}
 			}
+			else rectangle01.setFillColor(Color(70, 130, 180, 0));
+
 			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Tab)
 			{
 				Menu();
@@ -436,13 +478,14 @@ void Learning()
 		window.draw(text);
 		window.draw(shadow1);
 		window.draw(shadow2);
+		window.draw(rectangle0);
 		window.draw(rectangle2);
 		window.draw(text2);
 		window.draw(shadow3);
 		window.draw(shadow4);
+		window.draw(rectangle01);
 		window.draw(text3);
 		window.display();
-
 	}
 }
 
@@ -486,7 +529,6 @@ void Voc_enru()
 	text0.setColor(Color(255, 239, 213));
 	text0.setPosition(110, 70);
 	
-
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -501,13 +543,13 @@ void Voc_enru()
 				return;
 			}
 		}
+
 		window.clear();
 		window.draw(menusprite);
 		window.draw(rectangle);
 		window.draw(text0);
 		window.display();
 	}
-
 }
 
 void Voc_ruen()
@@ -551,7 +593,6 @@ void Voc_ruen()
 	text0.setColor(Color(255, 239, 213));
 	text0.setPosition(110, 70);
 
-
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -566,13 +607,13 @@ void Voc_ruen()
 				return;
 			}
 		}
+
 		window.clear();
 		window.draw(menusprite);
 		window.draw(rectangle);
 		window.draw(text0);
 		window.display();
 	}
-
 }
 
 void Learn_enru()
@@ -597,7 +638,7 @@ void Learn_enru()
 	rectangle2.setOutlineThickness(1);
 	rectangle2.setOutlineColor(Color(255, 239, 213));
 	rectangle2.setPosition(420, 250);
-	rectangle2.setFillColor(Color(100, 111, 125, 190)); //198, 126, 195/216, 148, 214
+	rectangle2.setFillColor(Color(100, 111, 125, 190)); 
 
 	Font font;
 	font.loadFromFile("benguiat-rus_[allfont.ru].ttf");
@@ -617,13 +658,11 @@ void Learn_enru()
 	Text perevod("перевод:", font, 50);
 
 	string eng;
-	string left;
 	string rus;
-	string right;
+	string st;
 
 	eng = (const char*)w[0].en;
 	rus = (const char*)w[0].ru;
-	string st;
 
 	text0.setString((eng));
 	text0.setColor(Color(255, 239, 213));
@@ -652,6 +691,7 @@ void Learn_enru()
 				Learning();
 				return;
 			}
+
 			if (event.type == sf::Event::TextEntered) {
 					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
 						char s = 'й';
@@ -799,7 +839,9 @@ void Learn_enru()
 					}
 					flag = 1;*/
 			}
-			if (count!=10) {
+
+			if (count != 10)
+			{
 				if (event.type == Event::KeyPressed && event.key.code == Keyboard::Enter && rus == st)
 				{
 					st.clear();
@@ -808,14 +850,13 @@ void Learn_enru()
 					rus = (const char*)w[count].ru;
 					text0.setString(eng);
 				}
+
 				else if (event.type == Event::KeyPressed && event.key.code == Keyboard::Enter && rus != st)
 					st.clear();
 			}
 			else
-				Learning();
-			
+				Completed();
 		}
-
 
 		window.clear();
 		window.draw(menusprite);
@@ -829,9 +870,6 @@ void Learn_enru()
 		window.draw(text01);
 		window.display();
 	}
-
-
-
 }
 
 void Learn_ruen()
@@ -909,6 +947,7 @@ void Learn_ruen()
 				Learning();
 				return;
 			}
+
 			if (event.type == sf::Event::TextEntered) {
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
 					char s = 'q';
@@ -1020,7 +1059,9 @@ void Learn_ruen()
 
 				text01.setString(st);
 			}
-			if (count != 10) {
+
+			if (count != 10) 
+			{
 				if (event.type == Event::KeyPressed && event.key.code == Keyboard::Enter && eng == st)
 				{
 					st.clear();
@@ -1029,12 +1070,14 @@ void Learn_ruen()
 					rus = (const char*)w[count].ru;
 					text0.setString(rus);
 				}
+
 				else if (event.type == Event::KeyPressed && event.key.code == Keyboard::Enter && eng != st)
 					st.clear();
 			}
 			else
-				Learning();
+				Completed();
 		}
+
 		window.clear();
 		window.draw(menusprite);
 		window.draw(title);
@@ -1045,6 +1088,59 @@ void Learn_ruen()
 		window.draw(text0);
 		window.draw(text_);
 		window.draw(text01);
+		window.display();
+	}
+}
+
+void Completed()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	window.setTitle("Completed");
+
+	Image menuimage;
+	menuimage.loadFromFile("C:/Users/DNS-PC/Desktop/image/inoutputwindow.png");
+	Texture menuTexture;
+	menuTexture.loadFromImage(menuimage);
+	Sprite menusprite;
+	menusprite.setTexture(menuTexture);
+
+	RectangleShape rectangle(sf::Vector2f(660, 400));
+	rectangle.setOutlineThickness(1);
+	rectangle.setOutlineColor(Color(255, 239, 213));
+	rectangle.setPosition(70, 100);
+	rectangle.setFillColor(Color(100, 111, 125, 120));
+
+	Font font;
+	font.loadFromFile("benguiat-rus_[allfont.ru].ttf");
+	Text title("Вы успешно прошли изучение", font, 40);
+	title.setColor(Color(255, 239, 213));
+	title.setStyle(sf::Text::Bold);
+	title.setPosition(80, 220);
+	Text text("нажмите Tab", font, 25);
+	text.setColor(Color(255, 239, 213, 100));
+	text.setPosition(310, 280);
+
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+
+			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Tab)
+			{
+				Learning();
+				return;
+			}
+		}
+
+		window.clear();
+		window.draw(menusprite);
+		window.draw(rectangle);
+		window.draw(title);
+		window.draw(text);
 		window.display();
 	}
 }
