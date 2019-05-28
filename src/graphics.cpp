@@ -8,7 +8,7 @@
 #include <string.h>
 #include <conio.h>
 #pragma warning(disable : 4996)
-#define n 10
+#define n 30
 
 using namespace sf;
 using namespace std;
@@ -24,6 +24,7 @@ void Learn_enru();
 void Learn_ruen();
 void Completed();
 struct d w[n];
+int a = 0, b = 15, c = 15, d = 30;
 
 RenderWindow window(VideoMode(800, 600), "WordLearn");
 int main()
@@ -306,11 +307,10 @@ void Vocabulary()
 			if (event.type == sf::Event::Closed)
 				window.close();
 
-			if (IntRect(140, 160, 520, 90).contains(Mouse::getPosition(window)))
+			if (IntRect(140, 180, 520, 90).contains(Mouse::getPosition(window)))
 			{
 				rectangle0.setFillColor(Color(70, 130, 180, 130));
-				if (event.type == sf::Event::MouseButtonPressed
-					&& event.mouseButton.button == sf::Mouse::Left)
+				if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
 				{
 					Voc_enru();
 				}
@@ -320,8 +320,7 @@ void Vocabulary()
 			if (IntRect(140, 375, 520, 90).contains(Mouse::getPosition(window)))
 			{
 				rectangle01.setFillColor(Color(70, 130, 180, 130));
-				if (event.type == sf::Event::MouseButtonPressed
-					&& event.mouseButton.button == sf::Mouse::Left)
+				if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
 				{
 					Voc_ruen();
 				}
@@ -513,22 +512,35 @@ void Voc_enru()
 
 	Font font;
 	font.loadFromFile("benguiat-rus_[allfont.ru].ttf");
-	Text text0("", font, 40);
+	Text text0("", font, 30);
+	Text text01("", font, 30);
 
 	string rus;
 	string eng;
 	string all;
-	for (int i = 0; i < n; i++)
+	string all2;
+
+	for ( a ; a < b; a++)
 	{
-		rus = (const char*)w[i].ru;
-		eng = (const char*)w[i].en;
+		rus = (const char*)w[a].ru;
+		eng = (const char*)w[a].en;
 		all += eng + "-" + rus + "\n";
 	}
 
 	text0.setString((all));
 	text0.setColor(Color(255, 239, 213));
 	text0.setPosition(110, 70);
-	
+
+	for (c; c < d; c++)
+	{
+		rus = (const char*)w[c].ru;
+		eng = (const char*)w[c].en;
+		all2 += eng + "-" + rus + "\n";
+	}
+	text01.setString((all2));
+	text01.setColor(Color(255, 239, 213));
+	text01.setPosition(410, 70);
+
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -536,18 +548,19 @@ void Voc_enru()
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
-
 			if (event.type == Event::KeyPressed && event.key.code == Keyboard::Tab)
 			{
 				Vocabulary();
 				return;
 			}
+
 		}
 
 		window.clear();
 		window.draw(menusprite);
 		window.draw(rectangle);
 		window.draw(text0);
+		window.draw(text01);
 		window.display();
 	}
 }
@@ -572,26 +585,38 @@ void Voc_ruen()
 	rectangle.setFillColor(Color(100, 111, 125, 120));
 
 	Wl(w);
-	Voc1(w);
+	Voc(w);
 
 	Font font;
 	font.loadFromFile("benguiat-rus_[allfont.ru].ttf");
-	Text text0("", font, 40);
+	Text text0("", font, 30);
+	Text text01("", font, 30);
 
 	string rus;
 	string eng;
 	string all;
+	string all2;
 
-	for (int i = 0; i < n; i++)
+	for (a; a < b; a++)
 	{
-		rus = (const char*)w[i].ru;
-		eng = (const char*)w[i].en;
+		rus = (const char*)w[a].ru;
+		eng = (const char*)w[a].en;
 		all += rus + "-" + eng + "\n";
 	}
 
 	text0.setString((all));
 	text0.setColor(Color(255, 239, 213));
 	text0.setPosition(110, 70);
+
+	for (c; c < d; c++)
+	{
+		rus = (const char*)w[c].ru;
+		eng = (const char*)w[c].en;
+		all2 += rus + "-" + eng + "\n";
+	}
+	text01.setString((all2));
+	text01.setColor(Color(255, 239, 213));
+	text01.setPosition(410, 70);
 
 	while (window.isOpen())
 	{
@@ -612,6 +637,7 @@ void Voc_ruen()
 		window.draw(menusprite);
 		window.draw(rectangle);
 		window.draw(text0);
+		window.draw(text01);
 		window.display();
 	}
 }
@@ -840,7 +866,7 @@ void Learn_enru()
 					flag = 1;*/
 			}
 
-			if (count != 10)
+			if (count != 30)
 			{
 				if (event.type == Event::KeyPressed && event.key.code == Keyboard::Enter && rus == st)
 				{
@@ -904,7 +930,7 @@ void Learn_ruen()
 	title.setPosition(70, 30);
 
 	Wl(w);
-	Voc1(w);
+	Voc(w);
 
 	Text text0("", font, 50);
 	Text text01("", font, 50);
@@ -1060,7 +1086,7 @@ void Learn_ruen()
 				text01.setString(st);
 			}
 
-			if (count != 10) 
+			if (count != 30) 
 			{
 				if (event.type == Event::KeyPressed && event.key.code == Keyboard::Enter && eng == st)
 				{
