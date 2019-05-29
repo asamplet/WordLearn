@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define n 10
+#define n 30
 
 void Wl(s2* w)
 {

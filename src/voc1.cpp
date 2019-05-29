@@ -2,11 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define n 10
+#define n 30
 
-void Voc1(s2* w)
+void Voc1(s2* w, int B[n])
 {
-    int i, j, g, B[n];
+    int i, j, g;
 
     for (i = 0; i < n; i++)
         B[i] = i;
@@ -20,6 +20,6 @@ void Voc1(s2* w)
         }
         B[j + 1] = g;
     }
-    for (i = 0; i < n; i++)
-        printf("%s - %s\n", w[B[i]].ru, w[B[i]].en);
+//    for (i = 0; i < n; i++)
+//       printf("%s - %s\n", w[B[i]].ru, w[B[i]].en);
 }
