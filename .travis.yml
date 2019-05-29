@@ -7,6 +7,6 @@ script:
   - make
   - make test
   - cd bin
-  - ./test.exe
+  - ./testprog.exe
   - cd ..
   - git ls-files src/ | xargs clang-format -i && git diff --exit-code
