@@ -1,4 +1,4 @@
-.PHONY:clean all 
+.PHONY:clean all test
 CC=gcc
 FLAG=-Wall -Werror
 SF=src/
