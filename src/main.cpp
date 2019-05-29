@@ -10,9 +10,9 @@ int main()
     int S[n], B[n];
     Wl(w);
     Voc(w, S);
-    Learn(w);
+//  Learn(w);
     Voc1(w, B);
-    Learn1(w);
+//  Learn1(w);
 
     return 0;
 }

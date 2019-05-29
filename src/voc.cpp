@@ -20,9 +20,9 @@ void Voc(s2* w, int S[n])
         }
         S[j + 1] = g;
     }
-    for (i = 0; i < n; i++)
+/*  for (i = 0; i < n; i++)
         printf("%s - %s\n", w[S[i]].en, w[S[i]].ru);
-/*    for (i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
 	printf("%d ", S[i]);
 */
 }
