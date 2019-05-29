@@ -718,136 +718,169 @@ void Learn_enru()
 				return;
 			}
 
-			if (event.type == sf::Event::TextEntered) {
-					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+			if (event.type == sf::Event::TextEntered) 
+		{
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) 
+					{
 						char s = 'й';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) 
+					{
 						char s = 'ц';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) 
+					{
 						char s = 'у';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) 
+					{
 						char s = 'к';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) 
+					{
 						char s = 'е';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) 
+					{
 						char s = 'н';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::U)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::U)) 
+					{
 						char s = 'г';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) 
+					{
 						char s = 'ш';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::O)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::O)) 
+					{
 						char s = 'щ';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) 
+					{
 						char s = 'з';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::LBracket)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::LBracket)) 
+					{
 						char s = 'х';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::RBracket)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::RBracket))
+					{
 						char s = 'ъ';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) 
+					{
 						char s = 'ф';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) 
+					{
 						char s = 'ы';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) 
+					{
 						char s = 'в';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) 
+					{
 						char s = 'а';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) 
+					{
 						char s = 'п';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H)) 
+					{
 						char s = 'р';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) 
+					{
 						char s = 'о';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)) 
+					{
 						char s = 'л';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) 
+					{
 						char s = 'д';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::SemiColon)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::SemiColon)) 
+					{
 						char s = 'ж';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Quote)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Quote)) 
+					{
 						char s = 'э';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) 
+					{
 						char s = 'я';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) 
+					{
 						char s = 'ч';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) 
+					{
 						char s = 'с';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) 
+					{
 						char s = 'м';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) 
+					{
 						char s = 'и';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) 
+					{
 						char s = 'т';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) 
+					{
 						char s = 'ь';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Comma)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Comma)) 
+					{
 						char s = 'б';
 						st.push_back(s);
 					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Period)) {
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Period)) 
+					{
 						char s = 'ю';
 						st.push_back(s);
-					}
-					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace)) {
+					} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace) && st.size() != 0) 
+					{
 						st.erase(st.size() - 1, 1);
 					}
 
@@ -962,112 +995,139 @@ void Learn_ruen()
 				return;
 			}
 
-			if (event.type == sf::Event::TextEntered) {
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+			if (event.type == sf::Event::TextEntered) 
+			{
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) 
+				{
 					char s = 'q';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) 
+				{
 					char s = 'w';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) 
+				{
 					char s = 'e';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) 
+				{
 					char s = 'r';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T)) 
+				{
 					char s = 't';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) 
+				{
 					char s = 'y';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::U)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::U)) 
+				{
 					char s = 'u';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) 
+				{
 					char s = 'i';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::O)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::O)) 
+				{
 					char s = 'o';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) 
+				{
 					char s = 'p';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) 
+				{
 					char s = 'a';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) 
+				{
 					char s = 's';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) 
+				{
 					char s = 'd';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) 
+				{
 					char s = 'f';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) 
+				{
 					char s = 'g';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::H)) 
+				{
 					char s = 'h';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)) 
+				{
 					char s = 'j';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::K)) 
+				{
 					char s = 'k';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) 
+				{
 					char s = 'l';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) 
+				{
 					char s = 'z';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) 
+				{
 					char s = 'x';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) 
+				{
 					char s = 'c';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::V)) 
+				{
 					char s = 'v';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) 
+				{
 					char s = 'b';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) 
+				{
 					char s = 'n';
 					st.push_back(s);
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) {
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M)) 
+				{
 					char s = 'm';
 					st.push_back(s);
-				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace)) {
+				} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace) && st.size() != 0) 
+				{
 					st.erase(st.size() - 1, 1);
 				}
 
