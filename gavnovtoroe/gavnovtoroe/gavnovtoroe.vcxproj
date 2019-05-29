@@ -136,12 +136,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="WordLearn.h" />
+    <ClInclude Include="wordlearn.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="graphics.cpp" />
     <ClCompile Include="Voc.cpp" />
-    <ClCompile Include="WordLearn.cpp" />
+    <ClCompile Include="wl.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
