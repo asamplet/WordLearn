@@ -4,7 +4,7 @@
 #include <string.h>
 #pragma warning(disable : 4996)
 #pragma warning(disable : 4430)
-#define n 10
+#define n 30
 
 void Voc(s2* w)
 {
