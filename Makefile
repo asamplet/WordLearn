@@ -98,4 +98,4 @@ $(USER_DIR_O)wl.o: $(SF)wl.cpp $(SF)WordLearn.h $(GTEST_HEADERS)
 
 
 clean :
-	rm -rf $(TESTS) $(EXE) $(SD)*.o $(USER_DIR_O)*.o
+	rm -rf $(TESTS) $(EXE) $(SD)*.o $(USER_DIR_O)*.o $(GTEST_LIB_DIR)/*.o
