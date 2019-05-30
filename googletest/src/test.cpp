@@ -1,5 +1,5 @@
 #include "../include/gtest/gtest.h"
-#include "../../src/wordlearn.h"
+#include "../../gavnovtoroe/gavnovtoroe/WordLearn.h"
 #include <stdio.h>
 #define n 30
 
