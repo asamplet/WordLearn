@@ -4,6 +4,7 @@ language: cpp
 compiler: gcc
 
 script:
+  - sudo apt-get install libgtest-dev
   - make
   - make test
   - ./bin/testprog.exe
