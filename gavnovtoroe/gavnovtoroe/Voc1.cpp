@@ -20,6 +20,6 @@ void Voc1(s2* w, int B[n])
         }
         B[j + 1] = g;
     }
-    for (i = 0; i < n; i++)
-        printf("%s - %s\n", w[B[i]].ru, w[B[i]].en);
+    // for (i = 0; i < n; i++)
+        // printf("%s - %s\n", w[B[i]].ru, w[B[i]].en);
 }
