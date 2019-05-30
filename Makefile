@@ -1,33 +1,42 @@
-.PHONY:clean all test
-CC=gcc
-FLAG=-Wall -Werror
-SF=src/
-SD=build/
-EXE=bin/wl.exe
+.PHONY: all clean test
 
-all: $(EXE)
+CC = gcc
 
+FLAG = -Wall -Werror
 
-$(EXE): $(SD)main.o $(SD)wl.o $(SD)voc.o $(SD)learn.o $(SD)voc1.o $(SD)learn1.o
-	$(CC) $(FLAG) -o $(EXE) $(SD)main.o $(SD)wl.o $(SD)voc.o $(SD)learn.o $(SD)voc1.o $(SD)learn1.o -lm
+SF = gavnovtoroe/gavnovtoroe/
+
+SD = build/src/
+
+EXE = bin/wl.exe
+
+all: build/src $(EXE)
+
+build/src:
+	mkdir build/src -p
+
+$(EXE): $(SD)main.o $(SD)wl.o $(SD)Voc.o $(SD)Voc1.o $(SF)Learn.o $(SF)Learn1.o
+	$(CC) $(FLAG) -o $(EXE) $(SD)main.o $(SD)wl.o $(SD)Voc.o $(SD)Voc1.o $(SF)Learn.o $(SF)Learn1.o
 
 $(SD)main.o: $(SF)main.cpp
-	$(CC) $(FLAG) -o $(SD)main.o -c $(SF)main.cpp -lm
+	$(CC) $(FLAG) -o $(SD)main.o -c $(SF)main.cpp 
 
 $(SD)wl.o: $(SF)wl.cpp
-	$(CC) $(FLAG) -o $(SD)wl.o -c $(SF)wl.cpp -lm
+	$(CC) $(FLAG) -o $(SD)wl.o -c $(SF)wl.cpp 
 
-$(SD)voc.o: $(SF)voc.cpp
-	$(CC) $(FLAG) -o $(SD)voc.o -c $(SF)voc.cpp -lm
+$(SD)Voc.o: $(SF)Voc.cpp
+	$(CC) $(FLAG) -o $(SD)Voc.o -c $(SF)Voc.cpp 
+
+$(SD)Voc1.o: $(SF)Voc1.cpp
+	$(CC) $(FLAG) -o $(SD)Voc1.o -c $(SF)Voc1.cpp 
 
 $(SD)learn.o: $(SF)learn.cpp
-	$(CC) $(FLAG) -o $(SD)learn.o -c $(SF)learn.cpp -lm
-
-$(SD)voc1.o: $(SF)voc1.cpp
-	$(CC) $(FLAG) -o $(SD)voc1.o -c $(SF)voc1.cpp -lm
+	$(CC) $(FLAG) -o $(SD)learn.o -c $(SF)learn.cpp
 
 $(SD)learn1.o: $(SF)learn1.cpp
-	$(CC) $(FLAG) -o $(SD)learn1.o -c $(SF)learn1.cpp -lm
+	$(CC) $(FLAG) -o $(SD)learn1.o -c $(SF)learn1.cpp
+
+
 
 
 GTEST_DIR = googletest
@@ -36,7 +45,9 @@ TEST_DIR = googletest/src/
 
 USER_DIR_O = build/test/
 
-GTEST_LIB_DIR = .
+GTEST_LIB_DIR = googletest/
+
+GTEST_LIBS = libgtest.a libgtest_main.a
 
 CPPFLAGS += -isystem $(GTEST_DIR)/include
 
@@ -52,20 +63,20 @@ test : build/test $(TESTS)
 build/test:
 	mkdir build/test -p
 
-$(TESTS) : $(USER_DIR_O)voc.o $(USER_DIR_O)voc1.o $(USER_DIR_O)wl.o $(USER_DIR_O)test.o 
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -L$(GTEST_LIB_DIR) -lgtest_main -lpthread $^ -o $@
+$(TESTS) : $(USER_DIR_O)test.o $(USER_DIR_O)Voc.o $(USER_DIR_O)Voc1.o $(USER_DIR_O)wl.o 
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -L $(GTEST_LIB_DIR)libs -lgtest_main -lpthread $^ -o $@
 
-$(USER_DIR_O)voc.o : $(SF)voc.cpp $(SF)wordlearn.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(SF)voc.cpp -o $@
-
-$(USER_DIR_O)voc1.o : $(SF)voc1.cpp $(SF)wordlearn.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(SF)voc1.cpp -o $@
-
-$(USER_DIR_O)wl.o: $(SF)wl.cpp $(SF)wordlearn.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(SF)wl.cpp -o $@
-
-$(USER_DIR_O)test.o : $(TEST_DIR)test.cpp $(SF)wordlearn.h $(GTEST_HEADERS)
+$(USER_DIR_O)test.o : $(TEST_DIR)test.cpp $(SF)WordLearn.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)test.cpp -o $@
+
+$(USER_DIR_O)Voc.o : $(SF)Voc.cpp $(SF)WordLearn.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(SF)Voc.cpp -o $@
+
+$(USER_DIR_O)Voc1.o : $(SF)Voc1.cpp $(SF)WordLearn.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(SF)Voc1.cpp -o $@
+
+$(USER_DIR_O)wl.o: $(SF)wl.cpp $(SF)WordLearn.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(SF)wl.cpp -o $@
 
 
 clean :
