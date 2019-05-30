@@ -65,7 +65,7 @@ build/test:
 	mkdir build/test -p
 
 $(TESTS) : $(USER_DIR_O)test.o $(USER_DIR_O)Voc.o $(USER_DIR_O)Voc1.o $(USER_DIR_O)wl.o 
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -L$(GTEST_LIB_DIR)libs -lgtest_main -lpthread $^ -o $@
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -L$(GTEST_LIB_DIR)libs -libgtest_main -lpthread $^ -o $@
 
 $(USER_DIR_O)test.o : $(TEST_DIR)test.cpp $(SF)WordLearn.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)test.cpp -o $@
