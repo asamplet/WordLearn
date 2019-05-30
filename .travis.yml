@@ -6,7 +6,5 @@ compiler: gcc
 script:
   - make
   - make test
-  - cd bin
-  - ./testprog.exe
-  - cd ..
-  - git ls-files src/ | xargs clang-format -i && git diff --exit-code
+  - ./bin/testprog.exe
+  - git ls-files src/cs/ | xargs clang-format -i && git diff --exit-code
