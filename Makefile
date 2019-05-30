@@ -38,7 +38,6 @@ $(SD)learn1.o: $(SF)learn1.cpp
 
 
 
-
 GTEST_DIR = googletest
 
 TEST_DIR = googletest/src/
@@ -46,6 +45,8 @@ TEST_DIR = googletest/src/
 USER_DIR_O = build/test/
 
 GTEST_LIB_DIR = googletest/
+
+USER_DIR_b = bin/
 
 GTEST_LIBS = libgtest.a libgtest_main.a
 
@@ -64,7 +65,7 @@ build/test:
 	mkdir build/test -p
 
 $(TESTS) : $(USER_DIR_O)test.o $(USER_DIR_O)Voc.o $(USER_DIR_O)Voc1.o $(USER_DIR_O)wl.o 
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -L $(GTEST_LIB_DIR)libs/ -lgtest_main -lpthread $^ -o $@
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -L$(GTEST_LIB_DIR)libs -lgtest_main.a -lpthread $^ -o $@
 
 $(USER_DIR_O)test.o : $(TEST_DIR)test.cpp $(SF)WordLearn.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(TEST_DIR)test.cpp -o $@
