@@ -1,29 +1,27 @@
-#include "wordlearn.h"
+#include "WordLearn.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#pragma warning(disable : 4996)
-#pragma warning(disable : 4430)
+//#pragma warning(disable : 4996)
+//#pragma warning(disable : 4430)
 #define n 30
 
-void Voc(s2* w)
+void Voc(s2* w, int S[n])
 {
-    int i, j, g, B[n];
+    int i, j, g;
 
     for (i = 0; i < n; i++)
-        B[i] = i;
+        S[i] = i;
 
-    for (i = 1; i < n; i++) 
-	{
-        g = B[i];
+    for (i = 1; i < n; i++) {
+        g = S[i];
         j = i - 1;
-        while (j >= 0 and strcmp(w[g].en, w[B[j]].en) < 0) 
-		{
-            B[j + 1] = B[j];
+        while (j >= 0 and strcmp(w[g].en, w[S[j]].en) < 0) {
+            S[j + 1] = S[j];
             j = j - 1;
         }
-        B[j + 1] = g;
+        S[j + 1] = g;
     }
-    //for (i = 0; i < n; i++)
-      //  printf("%s - %s\n", w[B[i]].en, w[B[i]].ru);
+    for (i = 0; i < n; i++)
+        printf("%s - %s\n", w[S[i]].en, w[S[i]].ru);
 }

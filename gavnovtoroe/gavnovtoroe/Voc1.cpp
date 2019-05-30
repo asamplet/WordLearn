@@ -1,12 +1,12 @@
-#include "wordlearn.h"
+#include "WordLearn.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define n 10
+#define n 30
 
-void Voc1(s2* w)
+void Voc1(s2* w, int B[n])
 {
-    int i, j, g, B[n];
+    int i, j, g;
 
     for (i = 0; i < n; i++)
         B[i] = i;

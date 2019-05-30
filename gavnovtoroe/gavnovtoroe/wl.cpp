@@ -1,9 +1,9 @@
-#include "wordlearn.h"
+#include "WordLearn.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#pragma warning(disable : 4996)
-#pragma warning(disable : 4430)
+//#pragma warning(disable : 4996)
+//#pragma warning(disable : 4430)
 #define n 30
 
 void Wl(s2* w)

@@ -1,8 +1,8 @@
-#include "wordlearn.h"
+#include "WordLearn.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define n 10
+#define n 30
 
 void Learn(s2* w)
 {
